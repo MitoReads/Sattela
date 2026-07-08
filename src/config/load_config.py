@@ -4,6 +4,7 @@ import termcolor
 from .config_path import get_config_path
 from .save_config import save_config
 
+# the default config - my personal hotkeys
 default_config = {
   "Mace": {
     "Perl Catch": {
@@ -23,6 +24,7 @@ default_config = {
   }
 }
 
+# returns the hotkey config taken from config.json file.
 def load_config():
   if os.path.exists(get_config_path()):
     try:

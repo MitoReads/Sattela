@@ -1,7 +1,7 @@
 import sys
 import os
 
-# checks if the app is running as a .exe or directly from python
+# checks if the app is running as a .exe or directly from python.
 def get_config_path():
   if getattr(sys, "frozen", False):
     base_dir = os.path.dirname(sys.executable)

@@ -1,3 +1,4 @@
+# ong if i know what this does, claude wrote it.
 def iter_macros(config):
   for category, macros in config.items():
     if not isinstance(macros, dict):
