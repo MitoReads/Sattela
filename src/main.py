@@ -30,7 +30,7 @@ for category, macro_name, hotkey, raw_slots in iter_macros(config):
 
   keyboard.add_hotkey(
     hotkey,
-    lambda mn=macro_name, s=slots: run_macro_threaded(mn, s)
+    lambda mn=macro_name, s=slots, ma=macros: run_macro_threaded(mn, s, ma)
   )
 
   termcolor.cprint(f"[{category}] '{macro_name}' bound to: {hotkey}", "green")

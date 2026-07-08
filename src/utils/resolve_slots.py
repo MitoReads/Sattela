@@ -6,9 +6,7 @@ def resolve_slots(slots):
   resolved = {}
 
   for name, key_str in (slots or {}).items():
-    if isinstance(key_str, str) and key_str.strip().lower() in mouse_side_buttons:
-      resolved[name] = key_str.strip().lower()
-    else:
-      resolved[name] = resolve_vk(key_str)
+    key_str = str(key_str) if not isinstance(key_str, str) else key_str
+    resolved[name] = key_str.strip().lower()
     
   return resolved

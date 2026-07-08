@@ -1,5 +1,5 @@
-from ..simulate.key_press import key_press
-from ..simulate.mouse.right_click import right_click
+from simulate.key_press import key_press
+from simulate.mouse.right_click import right_click
 
 def perl_catch(slots):
   perl_slot: str = slots["perl"]

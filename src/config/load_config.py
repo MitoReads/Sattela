@@ -6,20 +6,12 @@ from .save_config import save_config
 
 # the default config - my personal hotkeys
 default_config = {
-  "Mace": {
+  "Macros": {
     "Perl Catch": {
       "hotkey": "alt+q",
       "slots": {
         "perl": "msb_1",
         "wind_charge": "x"
-      }
-    },
-    
-    "Stun Slam": {
-      "hotkey": "alt+w",
-      "slots": {
-        "axe": "2",
-        "mace": "1"
       }
     }
   }
@@ -27,12 +19,21 @@ default_config = {
 
 # returns the hotkey config taken from config.json file.
 def load_config():
-  if os.path.exists(get_config_path()):
+  config_path = get_config_path()
+  
+  if os.path.exists(config_path):
     try:
-      with open(get_config_path(), "r") as f:
-        return json.load(f)
+      with open(config_path, "r") as f:
+        config_data = json.load(f)
+        if config_data:
+          return config_data
+        else:
+          termcolor.cprint("Config file is empty, generating defaults.", "yellow")
     except (json.JSONDecodeError, OSError) as e:
-      termcolor.cprint(f"Failed to read config.json ({e}), generating defaults.")
-    
-    save_config(default_config)
-    return json.loads(json.dumps(default_config))
+      termcolor.cprint(f"Failed to read config.json ({e}), generating defaults.", "red")
+  else:
+    termcolor.cprint(f"Config file not found at {config_path}, creating with defaults.", "cyan")
+  
+  # File doesn't exist or is invalid - create default
+  save_config(default_config)
+  return default_config

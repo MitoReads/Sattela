@@ -1,0 +1,11 @@
+{
+  "Macros": {
+    "Perl Catch": {
+      "hotkey": "alt+q",
+      "slots": {
+        "perl": "msb_1",
+        "wind_charge": "x"
+      }
+    }
+  }
+}

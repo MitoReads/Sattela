@@ -1,9 +1,11 @@
-from .get_config import get_config
+from .load_config import load_config
+
+config = None
 
 # return a cashed dict containing the hotkey config.
 def get_config():
-  config = None
+  global config
 
   if config is None:
-    config = get_config()
+    config = load_config()
   return config
