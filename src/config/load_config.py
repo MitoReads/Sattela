@@ -14,6 +14,7 @@ default_config = {
         "wind_charge": "x"
       }
     },
+    
     "Stun Slam": {
       "hotkey": "alt+w",
       "slots": {
