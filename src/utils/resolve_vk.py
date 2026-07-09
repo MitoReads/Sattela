@@ -1,7 +1,7 @@
 import win32api
 
-# msb_1 is the front mouse side button and msb_2 is the back one.
-mouse_side_buttons = {"msb_1", "msb_2"}
+# msb_f is the front mouse side button and msb_b is the back one.
+mouse_side_buttons = {"msb_f", "msb_b"}
 
 def resolve_vk(key_str: str):
   if not key_str:

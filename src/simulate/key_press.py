@@ -6,11 +6,11 @@ from utils.resolve_vk import resolve_vk
 def key_press(key):
   key_str = str(key) if not isinstance(key, str) else key
 
-  if "msb_1" in key_str or "msb_2" in key_str:
-    if "msb_1" in key_str:
-      press_side_button_back()
-    elif "msb_2" in key_str:
+  if "msb_f" in key_str or "msb_b" in key_str:
+    if "msb_f" in key_str:
       press_side_button_front()
+    elif "msb_b" in key_str:
+      press_side_button_back()
       pass
     return
   

@@ -1,6 +1,4 @@
-from .resolve_vk import resolve_vk
-
-mouse_side_buttons = {"msb_1", "msb_2"}
+mouse_side_buttons = {"msb_f", "msb_b"}
 
 def resolve_slots(slots):
   resolved = {}

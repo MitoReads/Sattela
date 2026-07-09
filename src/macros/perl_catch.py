@@ -1,5 +1,6 @@
 from simulate.key_press import key_press
 from simulate.mouse.right_click import right_click
+import time
 
 def perl_catch(slots):
   perl_slot: str = slots["perl"]
@@ -7,5 +8,6 @@ def perl_catch(slots):
 
   key_press(perl_slot)
   right_click()
+  time.sleep(1/20)
   key_press(wind_charge_slot)
   right_click()
