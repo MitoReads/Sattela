@@ -10,7 +10,7 @@ default_config = {
     "Perl Catch": {
       "hotkey": "alt+q",
       "slots": {
-        "perl": "msb_1",
+        "perl": "msb_f",
         "wind_charge": "x"
       }
     }
