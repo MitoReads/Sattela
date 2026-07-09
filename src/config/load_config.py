@@ -13,6 +13,14 @@ default_config = {
         "perl": "msb_f",
         "wind_charge": "x"
       }
+    },
+
+    "Stun Slam": {
+      "hotkey": "alt+w",
+      "slots": {
+        "axe": "2",
+        "mace": "1"
+      }
     }
   }
 }

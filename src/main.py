@@ -4,12 +4,14 @@ from utils.greet import greet
 from config.get_config import get_config
 from utils.iter_macros import iter_macros
 from macros.perl_catch import perl_catch
+from macros.stun_slam import stun_slam
 from utils.resolve_slots import resolve_slots
 from utils.run_macro_threaded import run_macro_threaded
 from config.config_path import get_config_path
 
 macros = {
-  "Perl Catch": perl_catch
+  "Perl Catch": perl_catch,
+  "Stun Slam": stun_slam
 }
 
 greet()

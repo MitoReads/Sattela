@@ -11,6 +11,7 @@ The project is open source, if you suspect any kind of malware you can read the 
 ### Mace
 
 - Perl Catch
+- Stun Slam
 
 ## Building From Source
 
