@@ -16,6 +16,7 @@ The project is open source, if you suspect any kind of malware you can read the 
 ### Etc
 
 - Mending
+- Lunge Swap
 
 ## Building From Source
 

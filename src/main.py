@@ -8,6 +8,7 @@ from utils.iter_macros import iter_macros
 from macros.perl_catch import perl_catch
 from macros.stun_slam import stun_slam
 from macros.mending import mending
+from macros.lunge_swap import lunge_swap
 from utils.resolve_slots import resolve_slots
 from utils.run_macro_threaded import run_macro_threaded
 from config.config_path import get_config_path
@@ -24,7 +25,8 @@ def set_realtime_priority():
 macros = {
   "Perl Catch": perl_catch,
   "Stun Slam": stun_slam,
-  "Mending": mending
+  "Mending": mending,
+  "Lunge Swap": lunge_swap
 }
 
 greet()

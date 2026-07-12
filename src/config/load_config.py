@@ -23,6 +23,14 @@ default_config = {
       }
     },
 
+    "Lunge Swap": {
+      "hotkey": "alt+s",
+      "slots": {
+        "zero cooldown": "x",
+        "spear": "q"
+      }
+    },
+
     "Mending": {
       "hotkey": "alt+g",
       "slots": {
