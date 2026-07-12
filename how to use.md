@@ -21,7 +21,11 @@ Example:
 }
 ```
 
-> **Note**: slot _names_ (perl, wind charge, etc) are fixed and used internally to identify which key to press, do not rename them.
+> [!IMPORTANT]
+> slot _names_ (perl, wind charge, etc) are fixed and used internally to identify which key to press, do not rename them.
+
+> [!WARNING]
+> Numpad keys are not supported.
 
 You may have noticed values like `msb_f`, these refer to mouse side buttons:
 
@@ -31,3 +35,19 @@ You may have noticed values like `msb_f`, these refer to mouse side buttons:
 | `msb_b` | Mouse side button, back  |
 
 Use these anywhere a slot expects a keybind that is bounded to a mouse side button.
+
+## Triggering Macros
+
+Triggering macros are those that perform a non action.
+
+- Perl Catch
+- Stun Slam
+- Lunge Swap
+
+## Toggling Macros
+
+Toggling macros are those that perform a action continuously until its toggled off.
+
+To use a toggling macro you must press its assigned hotkey to enable it, once you are done with it you must press its assigned hotkey again to disable it.
+
+- Mending
