@@ -7,7 +7,7 @@ from config.get_config import get_config
 from utils.iter_macros import iter_macros
 from macros.perl_catch import perl_catch
 from macros.stun_slam import stun_slam
-from macros.mending import mending
+from macros.mending import toggle_mending
 from macros.lunge_swap import lunge_swap
 from utils.resolve_slots import resolve_slots
 from utils.run_macro_threaded import run_macro_threaded
@@ -25,7 +25,7 @@ def set_realtime_priority():
 macros = {
   "Perl Catch": perl_catch,
   "Stun Slam": stun_slam,
-  "Mending": mending,
+  "Mending": toggle_mending,
   "Lunge Swap": lunge_swap
 }
 
@@ -61,6 +61,5 @@ if not bound_any:
   termcolor.cprint(f"Edit {get_config_path()} and set a 'hotkey' for the macros you want enabled, to disable enabled macros empty their 'hotkey'", "cyan")
   termcolor.cprint("Example: \"hotkey\": \"alt+q\"", "cyan")
 
-termcolor.cprint("Note: if you want to disable a macro remove its hotkey values", "cyan")
 termcolor.cprint("press f4 to exit", "cyan")
 keyboard.wait("f4")
