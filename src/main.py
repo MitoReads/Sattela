@@ -1,20 +1,35 @@
 import termcolor
 import keyboard
+import win32api
+import win32process
 from utils.greet import greet
 from config.get_config import get_config
 from utils.iter_macros import iter_macros
 from macros.perl_catch import perl_catch
 from macros.stun_slam import stun_slam
+from macros.mending import mending
 from utils.resolve_slots import resolve_slots
 from utils.run_macro_threaded import run_macro_threaded
 from config.config_path import get_config_path
 
+def set_realtime_priority():
+  try:
+    process = win32api.GetCurrentProcess()
+    win32process.SetPriorityClass(process, win32process.REALTIME_PRIORITY_CLASS)
+    termcolor.cprint("Priority set to realtime for better performance.", "green")
+
+  except:
+    termcolor.cprint("Failed to set realtime priority.", "red")
+
 macros = {
   "Perl Catch": perl_catch,
-  "Stun Slam": stun_slam
+  "Stun Slam": stun_slam,
+  "Mending": mending
 }
 
 greet()
+
+set_realtime_priority()
 
 config = get_config()
 bound_any = False
@@ -44,5 +59,6 @@ if not bound_any:
   termcolor.cprint(f"Edit {get_config_path()} and set a 'hotkey' for the macros you want enabled, to disable enabled macros empty their 'hotkey'", "cyan")
   termcolor.cprint("Example: \"hotkey\": \"alt+q\"", "cyan")
 
+termcolor.cprint("Note: if you want to disable a macro remove its hotkey values", "cyan")
 termcolor.cprint("press f4 to exit", "cyan")
 keyboard.wait("f4")

@@ -21,6 +21,13 @@ default_config = {
         "axe": "2",
         "mace": "1"
       }
+    },
+
+    "Mending": {
+      "hotkey": "alt+g",
+      "slots": {
+        "xp bottle": "msb_f",
+      }
     }
   }
 }
