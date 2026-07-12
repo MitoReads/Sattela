@@ -1,6 +1,6 @@
 from simulate.key_press import key_press
 from simulate.mouse.left_click import left_click
-import time
+from utils.precise_sleep import precise_sleep
 
 def stun_slam(slots):
   axe_slot: str = slots["axe"]
@@ -8,6 +8,6 @@ def stun_slam(slots):
 
   key_press(axe_slot)
   left_click()
-  time.sleep(1/20)
+  precise_sleep(1/20)
   key_press(mace_slot)
   left_click()

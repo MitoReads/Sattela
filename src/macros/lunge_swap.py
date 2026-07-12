@@ -8,5 +8,5 @@ def lunge_swap(slots):
 
   left_click()
   key_press(spear_slot)
-  precise_sleep(0.05)
+  precise_sleep(1/20)
   key_press(zero_cooldown_slot)
