@@ -36,6 +36,13 @@ default_config = {
       "slots": {
         "xp bottle": "msb_f",
       }
+    },
+
+    "Crystal Spam": {
+      "hotkey": "alt+a",
+      "slots": {
+        "crystal": "caps_lock",
+      } 
     }
   }
 }
