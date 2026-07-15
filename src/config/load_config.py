@@ -43,6 +43,15 @@ default_config = {
       "slots": {
         "crystal": "caps_lock",
       } 
+    },
+
+    "Anchor": {
+      "hotkey": "tab",
+      "slots": {
+        "anchor": "x",
+        "glow stone": "c",
+        "totem": "3"
+      } 
     }
   }
 }

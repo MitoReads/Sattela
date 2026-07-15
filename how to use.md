@@ -43,6 +43,7 @@ Triggering macros are those that perform a non action.
 - Perl Catch
 - Stun Slam
 - Lunge Swap
+- Anchor
 
 ## Toggling Macros
 
