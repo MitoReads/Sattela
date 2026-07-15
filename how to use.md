@@ -51,3 +51,4 @@ Toggling macros are those that perform a action continuously until its toggled o
 To use a toggling macro you must press its assigned hotkey to enable it, once you are done with it you must press its assigned hotkey again to disable it.
 
 - Mending
+- Crystal Spam
