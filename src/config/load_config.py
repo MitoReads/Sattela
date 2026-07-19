@@ -46,7 +46,7 @@ default_config = {
     },
 
     "Anchor": {
-      "hotkey": "tab",
+      "hotkey": "alt+d",
       "slots": {
         "anchor": "x",
         "glow stone": "c",
