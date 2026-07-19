@@ -52,6 +52,14 @@ default_config = {
         "glow stone": "c",
         "totem": "3"
       } 
+    },
+
+    "Breach Swap": {
+      "hotkey": "tab",
+      "slots": {
+        "sword": "caps_lock",
+        "breach mace": "c",
+      } 
     }
   }
 }

@@ -11,6 +11,7 @@ from macros.mending import toggle_mending
 from macros.lunge_swap import lunge_swap
 from macros.crystal_spam import toggle_crystal_spam
 from macros.anchor import anchor
+from macros.breach_swap import breach_swap
 from utils.resolve_slots import resolve_slots
 from utils.run_macro_threaded import run_macro_threaded
 from config.config_path import get_config_path
@@ -30,7 +31,8 @@ macros = {
   "Mending": toggle_mending,
   "Lunge Swap": lunge_swap,
   "Crystal Spam": toggle_crystal_spam,
-  "Anchor": anchor
+  "Anchor": anchor,
+  "Breach Swap": breach_swap
 }
 
 greet()
