@@ -2,6 +2,7 @@ import termcolor
 import keyboard
 import win32api
 import win32process
+import colorama
 from utils.greet import greet
 from config.get_config import get_config
 from utils.iter_macros import iter_macros
@@ -15,6 +16,8 @@ from macros.breach_swap import breach_swap
 from utils.resolve_slots import resolve_slots
 from utils.run_macro_threaded import run_macro_threaded
 from config.config_path import get_config_path
+
+colorama.just_fix_windows_console()
 
 def set_realtime_priority():
   try:
