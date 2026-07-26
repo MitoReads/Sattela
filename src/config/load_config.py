@@ -32,21 +32,21 @@ default_config = {
     },
 
     "Mending": {
-      "hotkey": "alt+g",
+      "hotkey": "",
       "slots": {
         "xp bottle": "msb_f",
       }
     },
 
     "Crystal Spam": {
-      "hotkey": "alt+a",
+      "hotkey": "",
       "slots": {
         "crystal": "caps_lock",
       } 
     },
 
     "Anchor": {
-      "hotkey": "alt+d",
+      "hotkey": "",
       "slots": {
         "anchor": "x",
         "glow stone": "c",
@@ -55,7 +55,7 @@ default_config = {
     },
 
     "Breach Swap": {
-      "hotkey": "tab",
+      "hotkey": "",
       "slots": {
         "sword": "caps_lock",
         "breach mace": "c",
