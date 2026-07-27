@@ -51,7 +51,7 @@ pip install pyinstaller
 ```
 
 ```bash
-pyinstaller --onefile --console --name Sattela --icon=icon.ico src/main.py
+pyinstaller --console --name Sattela src/main.py
 ```
 
 Done your .exe is in dist/Sattela.exe
