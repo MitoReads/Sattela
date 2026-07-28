@@ -35,23 +35,7 @@ cd Sattela/
 ```
 
 ```bash
-python -m venv venv
-```
-
-```bash
-./venv/Scripts/activate
-```
-
-```bash
-pip install -r requirements.txt
-```
-
-```bash
-pip install pyinstaller
-```
-
-```bash
-pyinstaller --console --name Sattela src/main.py
+.\compile.bat
 ```
 
 Done your .exe is in dist/Sattela.exe
