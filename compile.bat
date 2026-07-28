@@ -17,15 +17,14 @@ REM Create directories if they don't exist
 if not exist "%OBJ_DIR%" mkdir "%OBJ_DIR%"
 if not exist "%DIST_DIR%" mkdir "%DIST_DIR%"
 
-REM Compile all .cpp files into object files
+REM Compile all .cpp files (recursively) into object files
 echo Compiling .cpp files...
 set OBJ_FILES=
-for %%f in ("%SRC_DIR%\*.cpp") do (
+for /r "%SRC_DIR%" %%f in (*.cpp) do (
     echo Compiling %%f...
-    g++ -c "%%f" -o "%OBJ_DIR%\%%~nf.o"
+    g++ -std=c++17 -I"%SRC_DIR%" -c "%%f" -o "%OBJ_DIR%\%%~nf.o"
     if errorlevel 1 (
         echo Error compiling %%f!
-        pause
         exit /b 1
     )
     set OBJ_FILES=!OBJ_FILES! "%OBJ_DIR%\%%~nf.o"
@@ -33,10 +32,9 @@ for %%f in ("%SRC_DIR%\*.cpp") do (
 
 REM Link all object files into the executable
 echo Linking object files...
-g++ %OBJ_FILES% -o "%OUTPUT_EXE%"
+g++ !OBJ_FILES! -o "%OUTPUT_EXE%"
 if errorlevel 1 (
     echo Error linking!
-    pause
     exit /b 1
 )
 
