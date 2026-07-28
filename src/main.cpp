@@ -1,6 +1,12 @@
-#include <iostream>
 #include <windows.h>
+#include <functional>
+#include <iostream>
+#include <set>
+#include <unordered_map>
 #include "core/core.h"
+#include "macros/macros.h"
+
+using macroFunc = std::function<void (std::set<std::string>)>;
 
 // int main()
 // {
@@ -27,5 +33,10 @@
 // }
 
 int main() {
+  std::set<std::string> keys = {
+    "k",
+    "q"
+  };
 
+  pearlCatch(keys);
 }

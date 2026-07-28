@@ -4,25 +4,9 @@ A PVP Focused Minecraft Macro Client, The Name Comes From The Witch Of Envy From
 
 ## Safety
 
-The project is open source, if you suspect any kind of malware you can read the source code. Or if you don't trust the .exe in releases; build it from source.
+The project is open source, if you suspect any kind of malware you can read the source code. Or if you don't trust the .exe in releases; build it from source (might not be as easy as you think it is).
 
 ## Implemented Macros
-
-### Mace
-
-- Perl Catch
-- Stun Slam
-- Breach Swap
-
-### Crystal
-
-- Crystal Spam
-- Anchor
-
-### Etc
-
-- Mending
-- Lunge Swap
 
 ## Building From Source
 

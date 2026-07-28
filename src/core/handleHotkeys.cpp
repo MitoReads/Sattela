@@ -3,7 +3,6 @@
  * 
  * uses the hotkey's id to decide what function will be called upon press.
  */
-
 void handleHotkeys(int hkid) {
   switch (hkid) {
   case 1:
