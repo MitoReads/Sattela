@@ -9,7 +9,7 @@ void registerHotkeys() {
   }
 
   if (bindHotkey(0, resolveKey(std::string("F4")), 999)) {
-    std::cout << "Registered EXUT To F4\n";
+    std::cout << "Registered EXIT To F4\n";
   }
 
   MSG msg;

@@ -5,15 +5,14 @@
 #include "macros.h"
 #include "../core/core.h"
 
-void pearlCatch(std::set<std::string> keys) {
-  auto it = keys.begin();
-  auto pearl = *it;
-  auto windCharge = *(++it);
+void pearlCatch(std::string keys[2]) {
+  std::string pearl = keys[0];
+  std::string windCharge = keys[1];
 
   keyPress(pearl);
   rightClick();
 
-  Sleep(2/20);
+  Sleep(50); // 1 tick
 
   keyPress(windCharge);
   rightClick();

@@ -106,8 +106,8 @@ WORD resolveKey(const std::string& key) {
       {"PRTSC", VK_SNAPSHOT},
       {"PAUSE", VK_PAUSE},
       {"BREAK", VK_PAUSE},
-      {"MOUSE_SIDE_BUTTON_FRONT", VK_XBUTTON1},
-      {"MOUSE_SIDE_BUTTON_BACK", VK_XBUTTON2},
+      {"MOUSE_SIDE_BUTTON_FRONT", VK_XBUTTON2},
+      {"MOUSE_SIDE_BUTTON_BACK", VK_XBUTTON1},
   };
 
   auto it = keyMap.find(key);
