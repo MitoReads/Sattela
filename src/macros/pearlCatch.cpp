@@ -5,7 +5,12 @@
 #include "core/core.h"
 
 void pearlCatch(std::set<std::string> keys) {
-  for (std::string key : keys) {
-    keyPress(key);
-  }
+  auto it = keys.begin();
+  auto pearl = *it;
+  auto windCharge = *(++it);
+
+  keyPress(pearl);
+  rightClick();
+  keyPress(windCharge);
+  rightClick();
 }

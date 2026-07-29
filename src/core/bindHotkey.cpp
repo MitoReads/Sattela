@@ -9,6 +9,7 @@
  *
  * the function sets a keybound for the key combo given to it.
  */
-void bindHotkey(int mk, char k, int id) {
-  if (!RegisterHotKey(NULL, id, mk, k)) std::cout << "Hotkey";
+bool bindHotkey(int mk, char k, int id) {
+  if (!RegisterHotKey(NULL, id, mk, k)) return false;
+  return true;
 }
