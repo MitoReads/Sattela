@@ -1,7 +1,7 @@
 #include <Windows.h>
 #include <variant>
 #include <string>
-#include "core/core.h"
+#include "core.h"
 
 /**
  * @param kc Keycode, can be a string or a VK

@@ -1,5 +1,4 @@
 #include <Windows.h>
-#include "core/core.h"
 
 void rightClick() {
   INPUT inputs[2] = {};

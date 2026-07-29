@@ -1,0 +1,54 @@
+# Makefile for Sattela project
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -g -I$(SRC_DIR) -I$(SRC_DIR)/core -I$(SRC_DIR)/macros
+SRC_DIR = src
+OBJ_DIR = objects
+DIST_DIR = dist
+TARGET = $(DIST_DIR)/Sattela.exe
+
+# Find all .cpp files recursively in src/
+SOURCES = $(shell dir /s /b $(SRC_DIR)\*.cpp 2>nul)
+# Convert to object file paths
+OBJECTS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SOURCES))
+
+# Default target
+all: $(TARGET)
+
+# Create directories if they don't exist
+$(OBJ_DIR):
+	mkdir $(OBJ_DIR) 2>nul
+$(DIST_DIR):
+	mkdir $(DIST_DIR) 2>nul
+
+# Compile .cpp files to .o files
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
+	@echo Compiling $<...
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Link object files into executable
+$(TARGET): $(OBJECTS) | $(DIST_DIR)
+	@echo Linking...
+	$(CXX) $(OBJECTS) -o $(TARGET)
+	@echo Build successful! Output: $(TARGET)
+
+# Compile and run
+run: $(TARGET)
+	@echo Running $(TARGET)...
+	$(TARGET)
+
+# Clean everything
+clean:
+	@echo Cleaning...
+	-rmdir /s /q $(OBJ_DIR) 2>nul
+	-del /q $(TARGET) 2>nul
+	@echo Clean complete!
+
+# Clean and rebuild
+rebuild: clean all
+
+# Show file lists (for debugging)
+list:
+	@echo Sources: $(SOURCES)
+	@echo Objects: $(OBJECTS)
+
+.PHONY: all run clean rebuild list

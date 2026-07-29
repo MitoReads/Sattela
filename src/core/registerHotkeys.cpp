@@ -1,7 +1,7 @@
 #include <windows.h>
 #include <iostream>
 #include <variant>
-#include "core/core.h"
+#include "core.h"
 
 void registerHotkeys() {
   if (bindHotkey(MOD_ALT, 'J', 1)) {

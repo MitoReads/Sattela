@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <string>
 #include <unordered_map>
-#include "core/core.h"
+#include "core.h"
 
 WORD resolveKey(const std::string& key) {
   // Single character

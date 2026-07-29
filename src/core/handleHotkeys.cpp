@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
-#include "macros/macros.h"
+#include "../macros/macros.h"
 
 /**
  * @param hkid the hotkey's id, will be used to assign a function to it.

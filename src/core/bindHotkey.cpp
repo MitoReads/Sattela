@@ -1,6 +1,6 @@
 #include <windows.h>
 #include <iostream>
-#include "core/core.h"
+#include "core.h"
 
 /**
  * @param mk the key modifier, MOD_ALT, MOD_CONTROL, MOD_IGNORE_ALL_MODIFIER
