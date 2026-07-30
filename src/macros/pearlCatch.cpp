@@ -5,7 +5,9 @@
 #include "../core/core.h"
 
 /**
- * Pearl Catching is when you throw an ender pearl into the air and a windcharge after inorder to make them hit each other in the air and give you an y level advantage 
+ * Pearl Catching is when you throw an ender pearl into the air and a windcharge
+ * after inorder to make them hit each other in the air and give you an y level
+ * advantage
  */
 void pearlCatch(std::vector<std::string> keys) {
   std::string pearl = keys[0];

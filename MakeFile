@@ -1,6 +1,6 @@
-# Makefile for Sattela project
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -g -I$(SRC_DIR) -I$(SRC_DIR)/core -I$(SRC_DIR)/macros
+LDFLAGS = -lwinmm -static
 SRC_DIR = src
 OBJ_DIR = objects
 DIST_DIR = dist
@@ -28,7 +28,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
 # Link object files into executable
 $(TARGET): $(OBJECTS) | $(DIST_DIR)
 	@echo Linking...
-	$(CXX) $(OBJECTS) -o $(TARGET)
+	$(CXX) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
 	@echo Build successful! Output: $(TARGET)
 
 # Compile and run

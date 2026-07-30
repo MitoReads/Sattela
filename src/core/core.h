@@ -5,7 +5,7 @@
 #include <string>
 #include <variant>
 
-bool bindHotkey(int mk, char k, int id);
+void bindHotkey(int mk, WORD k, int id);
 void handleHotkeys(int hkid);
 
 void leftClick();

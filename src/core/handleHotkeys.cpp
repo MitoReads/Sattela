@@ -15,6 +15,10 @@ void handleHotkeys(int hkid) {
     case 1:
       pearlCatch(getKeys("Pearl Catch"));
       break;
+
+    case 2:
+      stunSlam(getKeys("Stun Slam"));
+      break;
       
     case 999:
       exit(0);

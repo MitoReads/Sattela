@@ -2,14 +2,53 @@
 #include <iostream>
 #include <variant>
 #include "core.h"
+#include "config/config.h"
+
+// returns the macro name based on their id
+std::string getMacroName(int id) {
+  switch (id) {
+    case 1:
+      return "Pearl Catch";
+      break;
+
+    case 2:
+      return "Stun Slam";
+      break;
+
+    case 999:
+      return "EXIT";
+      break;
+
+    default:
+      return "None";
+      break;
+  }
+}
 
 void registerHotkeys() {
-  if (bindHotkey(MOD_ALT, 'J', 1)) {
-    std::cout << "Registered Pearl Catch To Ctrl + Q\n";
-  }
+  json config = getConfig();
+  json macros = config["Macros"];
 
-  if (bindHotkey(0, resolveKey(std::string("F4")), 999)) {
-    std::cout << "Registered EXIT To F4\n";
+  // Loops through every macro
+  for (json macro : macros) {
+    // registering the hotkey only if the macro is enabled
+    if (macro["Enabled"].get<bool>()) {
+      std::string modKey = macro["Mod Key"].get<std::string>();
+      std::string key = macro["Key"].get<std::string>();
+
+      int id = macro["ID"].get<int>();
+
+      bindHotkey(resolveKey(modKey), resolveKey(key), id);
+
+      // Better logging
+      std::string logMessage = getMacroName(id) + " Has Been Bound To ";
+      if (!modKey.empty()) {
+        logMessage += modKey + "+";
+      }
+      logMessage += key;
+
+      std::cout << logMessage << std::endl;
+    }
   }
 
   MSG msg;
