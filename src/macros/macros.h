@@ -1,6 +1,6 @@
 #pragma once
 
-#include <set>
+#include <vector>
 #include <string>
 
-void pearlCatch(const std::string keys[2]);
+void pearlCatch(std::vector<std::string> keys);
