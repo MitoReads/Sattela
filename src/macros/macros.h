@@ -3,4 +3,4 @@
 #include <set>
 #include <string>
 
-void pearlCatch(std::string keys[]);
+void pearlCatch(const std::string keys[2]);

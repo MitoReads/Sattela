@@ -3,7 +3,7 @@
 #include "core.h"
 
 /**
- * @param mk the key modifier, MOD_ALT, MOD_CONTROL, MOD_IGNORE_ALL_MODIFIER
+ * @param mk the key modifier, MOD_ALT, MOD_CONTROL, 0
  * @param k the key, k, e, etc.
  * @param id the hotkey's id, can not be the same as another hotkey's id
  *
