@@ -8,6 +8,14 @@ The project is open source, if you suspect any kind of malware you can read the 
 
 ## Implemented Macros
 
+### Mace
+
+- Pearl Catch
+
+## Dependencies
+
+[nlohmann/json v3.12.0](https://github.com/nlohmann/json/releases/tag/v3.12.0)
+
 ## Building From Source
 
 ```bash
@@ -19,7 +27,7 @@ cd Sattela/
 ```
 
 ```bash
-.\compile.bat
+make build
 ```
 
 Done your .exe is in dist/Sattela.exe
