@@ -1,6 +1,7 @@
 #include <windows.h>
 #include <string>
 
+// claude wrote this function, but it does the job :3
 std::string getConfigPath() {
   char buffer[MAX_PATH];
   GetModuleFileNameA(NULL, buffer, MAX_PATH);

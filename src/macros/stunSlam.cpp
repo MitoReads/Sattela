@@ -14,7 +14,7 @@ void stunSlam(std::vector<std::string> keys) {
   keyPress(axe);
   leftClick();
 
-  Sleep(50);  // 0.95 tick
+  Sleep(50);  // 1 tick
 
   keyPress(mace);
   leftClick();
