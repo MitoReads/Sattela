@@ -19,8 +19,12 @@ std::string getMacroName(int id) {
       return "Breach Swap";
       break;
 
+    case 4:
+      return "Lunge Swap";
+      break;
+
     case 999:
-      return "EXIT";
+      return "Panic (exit)";
       break;
 
     default:
@@ -55,11 +59,12 @@ void registerHotkeys() {
     }
   }
 
-  MSG msg;
+  installHotkeyHook();
 
+  MSG msg;
+  
   while (GetMessage(&msg, NULL, 0, 0)) {
-    if (msg.message == WM_HOTKEY) {
-      handleHotkeys(msg.wParam);
-    }
+    TranslateMessage(&msg);
+    DispatchMessage(&msg);
   }
 }

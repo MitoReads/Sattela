@@ -23,6 +23,10 @@ void handleHotkeys(int hkid) {
     case 3:
       breachSwap(getKeys("Breach Swap"));
       break;
+
+    case 4:
+      lungeSwap(getKeys("Lunge Swap"));
+      break;
       
     case 999:
       exit(0);

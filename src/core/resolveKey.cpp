@@ -59,12 +59,12 @@ WORD resolveKey(const std::string& key) {
       {"RIGHT", VK_RIGHT},
 
       // Modifiers
-      {"SHIFT", MOD_SHIFT},
+      {"SHIFT", VK_SHIFT},
       {"CTRL", VK_CONTROL},
-      {"CONTROL", MOD_CONTROL},
-      {"ALT", MOD_ALT},
-      {"WIN", MOD_WIN},
-      {"WINDOWS", MOD_WIN},
+      {"CONTROL", VK_CONTROL},
+      {"ALT", VK_MENU},
+      {"WIN", VK_LWIN},
+      {"WINDOWS", VK_LWIN},
 
       // Punctuation
       {".", VK_OEM_PERIOD},

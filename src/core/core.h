@@ -4,6 +4,15 @@
 #include <set>
 #include <string>
 #include <variant>
+#include <vector>
+
+struct HotkeyBinding {
+  WORD modVk;
+  WORD keyVk;
+  int id;
+};
+
+extern std::vector<HotkeyBinding> g_hotkeys;
 
 void bindHotkey(int mk, WORD k, int id);
 void handleHotkeys(int hkid);
@@ -19,3 +28,4 @@ WORD resolveKey(const std::variant<WORD, std::string>& key);
 
 void registerHotkeys();
 
+void installHotkeyHook();

@@ -1,6 +1,9 @@
 #include <windows.h>
 #include <iostream>
+#include <vector>
 #include "core.h"
+
+std::vector<HotkeyBinding> g_hotkeys;
 
 /**
  * @param mk the key modifier, MOD_ALT, MOD_CONTROL, 0
@@ -10,5 +13,5 @@
  * the function sets a keybound for the key combo given to it.
  */
 void bindHotkey(int mk, WORD k, int id) {
-  RegisterHotKey(NULL, id, mk, k);
+  g_hotkeys.push_back({ (WORD)mk, k, id });
 }

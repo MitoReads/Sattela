@@ -31,7 +31,18 @@ const json defaultConfig = {
       {"Key", "D"},
       {"Slots", {
         {"Sword", "CAPSLOCK"},
-        {"Mace", "1"}
+        {"Mace", "C"}
+      }}
+    }},
+
+    {"Lunge Swap", {
+      {"ID", 4},
+      {"Enabled", false},
+      {"Mod Key", "ALT"},
+      {"Key", "S"},
+      {"Slots", {
+        {"Zero Cooldown", "CAPSLOCK"},
+        {"Spear", "Q"}
       }}
     }},
 
