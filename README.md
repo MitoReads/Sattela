@@ -19,7 +19,7 @@ The project is open source, if you suspect any kind of malware you can read the 
 ## Building From Source
 
 ```bash
-git clone https://github.com/MitoReads/Sattela.git
+git clone https://github.com/SelfishNisha/Sattela.git
 ```
 
 ```bash
@@ -31,7 +31,3 @@ make build
 ```
 
 Done your .exe is in dist/Sattela.exe
-
-## License
-
-MIT
