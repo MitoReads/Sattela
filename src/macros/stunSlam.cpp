@@ -5,7 +5,8 @@
 #include "macros.h"
 
 /**
- * Stun Slamming is when you disable your opponent's shield mid air and hit them with a mace
+ * Stun Slamming is when you disable your opponent's shield mid air and hit them
+ * with a mace
  */
 void stunSlam(std::vector<std::string> keys) {
   std::string axe = keys[0];

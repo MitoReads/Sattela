@@ -24,6 +24,17 @@ const json defaultConfig = {
       }}
     }},
 
+    {"Breach Swap", {
+      {"ID", 3},
+      {"Enabled", false},
+      {"Mod Key", "ALT"},
+      {"Key", "D"},
+      {"Slots", {
+        {"Sword", "CAPSLOCK"},
+        {"Mace", "1"}
+      }}
+    }},
+
     {"Panic", {
       {"ID", 999},
       {"Enabled", true},

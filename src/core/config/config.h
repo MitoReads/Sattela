@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-using json = nlohmann::json;
+using json = nlohmann::ordered_json;
 
 json loadConfig();
 void saveConfig(const json& data);

@@ -19,6 +19,10 @@ void handleHotkeys(int hkid) {
     case 2:
       stunSlam(getKeys("Stun Slam"));
       break;
+
+    case 3:
+      breachSwap(getKeys("Breach Swap"));
+      break;
       
     case 999:
       exit(0);

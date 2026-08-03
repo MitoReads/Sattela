@@ -11,6 +11,8 @@ The project is open source, if you suspect any kind of malware you can read the 
 ### Mace
 
 - Pearl Catch
+- Stun Slam
+- Breach Swap
 
 ## Dependencies
 

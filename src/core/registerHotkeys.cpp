@@ -15,6 +15,10 @@ std::string getMacroName(int id) {
       return "Stun Slam";
       break;
 
+    case 3:
+      return "Breach Swap";
+      break;
+
     case 999:
       return "EXIT";
       break;
