@@ -15,9 +15,14 @@ The project is open source, if you suspect any kind of malware you can read the 
 - Breach Swap
 - Lunge Swap
 
+### Vanilla
+
+- Single Anchor
+
 ## Dependencies
 
 [nlohmann/json v3.12.0](https://github.com/nlohmann/json/releases/tag/v3.12.0)
+[agauniyal/rang v3.3](https://github.com/agauniyal/rang/releases/tag/v3.3)
 
 ## Building From Source
 

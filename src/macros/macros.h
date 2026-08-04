@@ -7,3 +7,4 @@ void pearlCatch(std::vector<std::string> keys);
 void stunSlam(std::vector<std::string> keys);
 void breachSwap(std::vector<std::string> keys);
 void lungeSwap(std::vector<std::string> keys);
+void singleAnchor(std::vector<std::string> keys);

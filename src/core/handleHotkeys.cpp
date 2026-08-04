@@ -27,6 +27,10 @@ void handleHotkeys(int hkid) {
     case 4:
       lungeSwap(getKeys("Lunge Swap"));
       break;
+
+    case 5:
+      singleAnchor(getKeys("Single Anchor"));
+      break;
       
     case 999:
       exit(0);

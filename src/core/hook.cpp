@@ -1,3 +1,5 @@
+// just so you know, claude wrote this, i have no idea what it does but it does a good job
+
 #include <atomic>
 #include <vector>
 #include "core.h"

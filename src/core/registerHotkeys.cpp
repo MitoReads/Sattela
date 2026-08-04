@@ -3,6 +3,7 @@
 #include <variant>
 #include "core.h"
 #include "config/config.h"
+#include "../../lib/rang.hpp"
 
 // returns the macro name based on their id
 std::string getMacroName(int id) {
@@ -21,6 +22,10 @@ std::string getMacroName(int id) {
 
     case 4:
       return "Lunge Swap";
+      break;
+
+    case 5:
+      return "Single Anchor";
       break;
 
     case 999:
@@ -55,7 +60,11 @@ void registerHotkeys() {
       }
       logMessage += key;
 
-      std::cout << logMessage << std::endl;
+      std::cout << rang::fg::green << logMessage << rang::fg::reset << std::endl;
+    } else {
+      int id = macro["ID"].get<int>();
+
+      std::cout << rang::fg::yellow << getMacroName(id) << " Is Disabled" << rang::fg::reset << std::endl;
     }
   }
 

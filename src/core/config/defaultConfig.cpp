@@ -46,6 +46,18 @@ const json defaultConfig = {
       }}
     }},
 
+    {"Single Anchor", {
+      {"ID", 5},
+      {"Enabled", false},
+      {"Mod Key", "ALT"},
+      {"Key", "A"},
+      {"Slots", {
+        {"Respawn Anchor", "X"},
+        {"Glowstone", "C"},
+        {"Totem", "3"},
+      }}
+    }},
+
     {"Panic", {
       {"ID", 999},
       {"Enabled", true},

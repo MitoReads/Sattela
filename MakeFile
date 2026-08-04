@@ -1,27 +1,31 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -g -I$(SRC_DIR) -I$(SRC_DIR)/core -I$(SRC_DIR)/macros
+CXXFLAGS = -std=c++17 -Wall -g -O0 -pipe -MMD -MP -I$(SRC_DIR) -I$(SRC_DIR)/core -I$(SRC_DIR)/macros
 LDFLAGS = -lwinmm -static
 SRC_DIR = src
 OBJ_DIR = objects
 DIST_DIR = dist
 TARGET = $(DIST_DIR)/Sattela.exe
 
-# Find all .cpp files recursively in src/
-SOURCES = $(shell dir /s /b $(SRC_DIR)\*.cpp 2>nul)
-# Convert to object file paths
-OBJECTS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SOURCES))
+# Use all cores by default. Override per-invocation with `make -j1` if you ever need serial.
+MAKEFLAGS += -j$(NUMBER_OF_PROCESSORS)
+
+# Recursive source discovery done in pure Make (no shelling out to `dir`, no
+# backslash/forward-slash mismatch). Handles nested folders like src/core, src/macros.
+rwildcard = $(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
+
+SOURCES := $(call rwildcard,$(SRC_DIR)/,*.cpp)
+OBJECTS := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SOURCES))
+DEPS    := $(OBJECTS:.o=.d)
 
 # Default target
 all: $(TARGET)
 
-# Create directories if they don't exist
-$(OBJ_DIR):
-	mkdir $(OBJ_DIR) 2>nul
 $(DIST_DIR):
 	mkdir $(DIST_DIR) 2>nul
 
-# Compile .cpp files to .o files
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
+# Compile .cpp files to .o files, creating nested object subfolders as needed
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@if not exist "$(subst /,\,$(dir $@))" mkdir "$(subst /,\,$(dir $@))"
 	@echo Compiling $<...
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
@@ -30,6 +34,10 @@ $(TARGET): $(OBJECTS) | $(DIST_DIR)
 	@echo Linking...
 	$(CXX) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
 	@echo Build successful! Output: $(TARGET)
+
+# Auto-generated header dependencies (from -MMD -MP above).
+# This is what makes editing a .h file only rebuild the .cpp files that actually use it.
+-include $(DEPS)
 
 # Compile and run
 run: $(TARGET)
