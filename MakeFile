@@ -1,0 +1,62 @@
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -g -O0 -pipe -MMD -MP -I$(SRC_DIR) -I$(SRC_DIR)/core -I$(SRC_DIR)/macros
+LDFLAGS = -lwinmm -static
+SRC_DIR = src
+OBJ_DIR = objects
+DIST_DIR = dist
+TARGET = $(DIST_DIR)/Sattela.exe
+
+# Use all cores by default. Override per-invocation with `make -j1` if you ever need serial.
+MAKEFLAGS += -j$(NUMBER_OF_PROCESSORS)
+
+# Recursive source discovery done in pure Make (no shelling out to `dir`, no
+# backslash/forward-slash mismatch). Handles nested folders like src/core, src/macros.
+rwildcard = $(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
+
+SOURCES := $(call rwildcard,$(SRC_DIR)/,*.cpp)
+OBJECTS := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SOURCES))
+DEPS    := $(OBJECTS:.o=.d)
+
+# Default target
+all: $(TARGET)
+
+$(DIST_DIR):
+	mkdir $(DIST_DIR) 2>nul
+
+# Compile .cpp files to .o files, creating nested object subfolders as needed
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@if not exist "$(subst /,\,$(dir $@))" mkdir "$(subst /,\,$(dir $@))"
+	@echo Compiling $<...
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Link object files into executable
+$(TARGET): $(OBJECTS) | $(DIST_DIR)
+	@echo Linking...
+	$(CXX) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
+	@echo Build successful! Output: $(TARGET)
+
+# Auto-generated header dependencies (from -MMD -MP above).
+# This is what makes editing a .h file only rebuild the .cpp files that actually use it.
+-include $(DEPS)
+
+# Compile and run
+run: $(TARGET)
+	@echo Running $(TARGET)...
+	$(TARGET)
+
+# Clean everything
+clean:
+	@echo Cleaning...
+	-rmdir /s /q $(OBJ_DIR) 2>nul
+	-del /q $(TARGET) 2>nul
+	@echo Clean complete!
+
+# Clean and rebuild
+rebuild: clean all
+
+# Show file lists (for debugging)
+list:
+	@echo Sources: $(SOURCES)
+	@echo Objects: $(OBJECTS)
+
+.PHONY: all run clean rebuild list

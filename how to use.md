@@ -2,55 +2,49 @@
 
 ## Config Format
 
-Each macro's config is made up of 4 parts:
+Each macro's config is made up of 6 parts:
 
-1. **Name**: identifies the macro (perl catch, stun slam, etc)
-2. **Hotkey**: the key combo(?) that triggers the macro (alt+q, f, etc)
-3. **Slots**: labels to identify _what_ item each keybind goes to (wind charge, perl, etc)
-4. **Slot keybinds**: the key bound to each slot (msb_f, x, etc)
+1. **Name**: identifies the macro (`Pearl Catch`, `Stun Slam`, Etc.)
+2. **ID**: this is a important key in the code, do not touch.
+3. **Enabled**: can be `true` or `false`, you guessed it? it enables and disables the macro :3
+4. **Mod Key**: the modifying key (`alt`, `control`, `ctrl`, `shift`, `win`, `windows`).
+5. **Key**: the key that must be pressed alongside the `Mod Key` to activate the macro (if mod key is empty the macro will be activated whenever the `key` is pressed)
+6. **Slots**: it contains the hotkeys to the item's position in hotbar.
 
 Example:
 
 ```json
-"Perl Catch": {
-  "hotkey": "alt+q",
-  "slots": {
-    "perl": "msb_f",
-    "wind charge": "x"
+"Pearl Catch": {
+  "ID": 1,
+  "Enabled": true,
+  "Mod Key": "ALT",
+  "Key": "Q",
+  "Slots": {
+    "Pearl": "MOUSE_SIDE_BUTTON_FRONT",
+    "Wind Charge": "X"
   }
-}
+},
 ```
 
-> [!IMPORTANT]
-> slot _names_ (perl, wind charge, etc) are fixed and used internally to identify which key to press, do not rename them.
-
-> [!WARNING]
-> Numpad keys are not supported.
-
-You may have noticed values like `msb_f`, these refer to mouse side buttons:
+You may have noticed values like `MOUSE_SIDE_BUTTON_FRONT`, these refer to mouse side buttons:
 
 | Value   | Meaning                  |
 | ------- | ------------------------ |
-| `msb_f` | Mouse side button, front |
-| `msb_b` | Mouse side button, back  |
+| `MOUSE_SIDE_BUTTON_FRONT` | Mouse side button, front |
+| `MOUSE_SIDE_BUTTON_BACK` | Mouse side button, back  |
+
+> does this even need explaning?
 
 Use these anywhere a slot expects a keybind that is bounded to a mouse side button.
 
+--- 
+
 ## Triggering Macros
 
-Triggering macros are those that perform a non action.
+Triggering macros are those that perform an action one time.
 
 - Perl Catch
 - Stun Slam
 - Lunge Swap
 - Breach Swap
 - Anchor
-
-## Toggling Macros
-
-Toggling macros are those that perform a action continuously until its toggled off.
-
-To use a toggling macro you must press its assigned hotkey to enable it, once you are done with it you must press its assigned hotkey again to disable it.
-
-- Mending
-- Crystal Spam
