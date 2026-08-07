@@ -29,3 +29,5 @@ WORD resolveKey(const std::variant<WORD, std::string>& key);
 void registerHotkeys();
 
 void installHotkeyHook();
+
+void preciseSleep(double ms);
